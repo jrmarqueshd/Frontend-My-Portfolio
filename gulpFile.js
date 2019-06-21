@@ -7,6 +7,7 @@ let rename = require("gulp-rename");
 let minHTML = require("gulp-htmlmin");
 let cleanCSS = require("gulp-clean-css");
 let minJS = require("gulp-minify");
+let minIMG = require("gulp-tinypng");
 
 // Dev Path
 const devRootPath = "./src/";
@@ -58,4 +59,12 @@ gulp.task("minifyJS", ()=>{
         .pipe(livereload(console.log("Watching JS")));
 });
 
+gulp.task("tinyPNG", ()=>{
+    return gulp.src(devRootPath + imagesPath + "*")
+        .pipe(minIMG("GIiBwwZEtaA4lb1V4O2zZqVf22jvlxGy"))
+        .pipe(gulp.dest(ProdPath + imagesPath))
+        .pipe(livereload(console.log("Minify IMGs")));
+});
+
 gulp.task("default", gulp.parallel("minifyHTML", "minifyCSS", "minifyJS"));
+gulp.task("tiny", gulp.parallel("tinyPNG"));

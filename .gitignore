@@ -5,6 +5,9 @@
 node_modules/
 /node_modules/
 /node_modules
+.gulp/
+/.gulp/
+/.gulp
 
 # Ignore extensions
 .zip
