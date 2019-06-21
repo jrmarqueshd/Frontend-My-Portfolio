@@ -2,14 +2,16 @@ window.addEventListener("load", ()=>{
     let $buttonMenu = document.getElementById("buttonMenu");
     let $buttonCloseMenu = document.getElementById("buttonCloseMenu");
     let $menuList = document.getElementById("menuList");
+    let $menuItems = document.querySelectorAll("#menuList > ul > li > a");
 
-    $buttonMenu.addEventListener("click", ()=>{
-        $menuList.classList.add("-show-menu");
-        $buttonMenu.classList.add("-hidden");
-    });
-
-    $buttonCloseMenu.addEventListener("click", ()=>{
-        $menuList.classList.remove("-show-menu");
-        $buttonMenu.classList.remove("-hidden");
+    function dropDownMenu(){
+        $menuList.classList.toggle("-show-menu");
+        $buttonMenu.classList.toggle("-hidden");
+    }
+    
+    $buttonMenu.addEventListener("click", dropDownMenu);
+    $buttonCloseMenu.addEventListener("click", dropDownMenu);
+    [].forEach.call($menuItems, (e)=>{
+        e.addEventListener("click", dropDownMenu);
     });
 })

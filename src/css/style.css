@@ -37,12 +37,21 @@ header{
 header button{
     background: transparent;
     border: none;
+    cursor: pointer;
     float: right;
     position: sticky;
     outline: none;
     top: 40px;
     transition: all 987ms ease-in-out;
     width: 50px;
+}
+
+header button span{
+    transition: all 987ms ease-in-out;
+}
+
+header button:hover span{
+    box-shadow: 1px 1px 50px var(--text-color-content);
 }
 
 header button.-hidden{
@@ -87,6 +96,7 @@ header nav button{
 
 header nav button span{
     background: var(--text-color-content);
+    max-width: 25px;
     position: absolute;
         top: 0;
         right: 0;
@@ -116,8 +126,27 @@ header nav ul li{
 
 header nav ul a{
     color: inherit;
+    display: block;
     text-decoration: none;
+    max-width: 300px;
+    position: relative;
 }
+
+header nav ul a:before{
+    content: "";
+    background: var(--main-background-color);
+    bottom: 0;
+    height: 2px;
+    display: block;
+    position: absolute;
+    transition: all 987ms ease-in-out;
+    width: 0%;
+}
+
+header nav ul a:hover:before{
+    width: 50%;
+}
+
 
 
 
