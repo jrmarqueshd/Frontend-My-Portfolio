@@ -1,0 +1,14 @@
+# Ignore paths
+.vscode/
+/.vscode/
+/.vscode
+node_modules/
+/node_modules/
+/node_modules
+
+# Ignore extensions
+.zip
+.rar
+
+# Ignore Files
+sftp.json

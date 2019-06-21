@@ -1,0 +1,23 @@
+{
+  "name": "my-portfolio",
+  "version": "1.0.0",
+  "main": "gulpFile.js",
+  "repository": "https://github.com/jrmarqueshd/my-portfolio.git",
+  "author": "jrmarqueshd <gilmar_junior@hotmail.com.br>",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon"
+  },
+  "devDependencies": {
+    "gulp": "4.0.0",
+    "gulp-clean-css": "4.2.0",
+    "gulp-htmlmin": "5.0.1",
+    "gulp-livereload": "4.0.1",
+    "gulp-minify": "3.1.0",
+    "gulp-rename": "1.4.0",
+    "gulp-watch": "5.0.1"
+  },
+  "dependencies": {
+    "get-google-fonts": "^1.2.0"
+  }
+}
