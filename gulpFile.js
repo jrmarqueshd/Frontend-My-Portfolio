@@ -30,7 +30,6 @@ gulp.task("minifyHTML", ()=>{
             minifyJS: true,
             minifyURLs: true,
             minifyCSS: true,
-            removeEmptyElements: true
         }))
         .pipe(gulp.dest(prodRootPath))
         .pipe(livereload(console.log("Watching HTML")));
