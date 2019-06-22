@@ -6,6 +6,7 @@ let rename = require("gulp-rename");
 
 let minHTML = require("gulp-htmlmin");
 let cleanCSS = require("gulp-clean-css");
+let concat = require("gulp-concat");
 let minJS = require("gulp-minify");
 let minIMG = require("gulp-tinypng");
 

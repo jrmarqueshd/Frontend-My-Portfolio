@@ -8,10 +8,11 @@ window.addEventListener("load", ()=>{
         $menuList.classList.toggle("-show-menu");
         $buttonMenu.classList.toggle("-hidden");
     }
-    
+
     $buttonMenu.addEventListener("click", dropDownMenu);
     $buttonCloseMenu.addEventListener("click", dropDownMenu);
     [].forEach.call($menuItems, (e)=>{
         e.addEventListener("click", dropDownMenu);
     });
+
 })
