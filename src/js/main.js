@@ -1,30 +1,71 @@
 window.addEventListener("load", ()=>{
+    // Variables
+
     let $header = document.getElementById("mainHeader");
     let heightHeader = $header.scrollHeight;
 
     let $headerFixed = document.getElementById("menuFixed");
+    let $navMenuFixed = document.getElementById("navMenuFixed");
     let $buttonMenu = document.getElementById("buttonMenu");
     let $buttonCloseMenu = document.getElementById("buttonCloseMenu");
+    let $navMenu = document.getElementById("navMenu");
     let $menuList = document.getElementById("menuList");
-    let $menuItems = document.querySelectorAll("#menuList > ul > li > a");
+    let $menuItems = document.querySelectorAll("#navMenu > ul > li > a");
 
-    function dropDownMenu(){
-        $menuList.classList.toggle("-show-menu");
-        $buttonMenu.classList.toggle("-hidden");
+    /**
+     * Functions
+     */
+
+    // Function to show menu and hidden button menu
+    function showMenu(){
+        $navMenu.classList.add("-show-menu");
+        $buttonMenu.classList.add("-hidden");
     }
 
-    $buttonMenu.addEventListener("click", dropDownMenu);
-    $buttonCloseMenu.addEventListener("click", dropDownMenu);
+    // Function to hidden menu and show button menu
+    function hiddenMenu(){
+        $navMenu.classList.remove("-show-menu");
+        $buttonMenu.classList.remove("-hidden");
+    }
+
+    function showFixedMenu(){
+        $headerFixed.classList.add("-show");
+        
+        if(window.matchMedia("(min-width: 768px)").matches){
+            $navMenuFixed.insertAdjacentElement("beforeend", $menuList);
+
+        }else if(window.matchMedia("(max-width: 767px)").matches){
+            $navMenu.insertAdjacentElement("beforeend", $menuList); 
+            $navMenuFixed.insertAdjacentElement("beforeend", $buttonMenu);
+        }  
+    }
+
+    function hiddenFixedMenu(){
+        $headerFixed.classList.remove("-show");
+        $navMenu.insertAdjacentElement("beforeend", $menuList);          
+        $header.insertAdjacentElement("beforeend", $buttonMenu);
+    }
+
+    /**
+     * Events
+     */
+
+    // Event to show menu and hidden button menu
+    $buttonMenu.addEventListener("click", showMenu);
+
+    // Event to hidden menu and show button menu
+    $buttonCloseMenu.addEventListener("click", hiddenMenu);
+
     [].forEach.call($menuItems, (e)=>{
-        e.addEventListener("click", dropDownMenu);
+        e.addEventListener("click", hiddenMenu);
     });
 
+    // Event to watch scroll window and show or hidden fixed menu
     window.addEventListener("scroll", ()=>{
         if(window.scrollY > heightHeader){
-            $headerFixed.classList.add("-show");           
+            showFixedMenu();          
         }else if(window.scrollY < heightHeader){
-            $headerFixed.classList.remove("-show");   
+            hiddenFixedMenu();
         }
-    })
-    
-})
+    });
+});
