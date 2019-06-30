@@ -38,6 +38,10 @@
     color: var(--text-color-inverse);
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     background: var(--main-background-color);
     background-repeat: no-repeat;
@@ -319,6 +323,54 @@ main .section-about article h2{
 main .section-about article h1{
     font-size: 30px;
     opacity: 1;
+}
+
+main .section-about article .about-content{
+    transition: all 1s ease-in-out;
+}
+
+main .section-about article .about-content.-hidden-content{
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+main .section-about article .about-content.-hidden-content::after{
+    background-image: linear-gradient(to bottom, transparent, #f3f3f3f0, var(--content-background-color));
+    content: "";
+    display: block;
+    height: 100px;
+    position: absolute;
+        bottom: 0;
+    width: 100%;
+}
+
+main .section-about article .about-content button{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: none; /* Original display is flex */
+        justify-content: center;
+    position: absolute;
+        bottom: 0px;
+    height: 100px;
+        line-height: 160px;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 98.7ms ease-in-out;
+    opacity: 0.5;
+    outline: none;
+    width: 100%;
+    z-index: 1;
+}
+
+main .section-about article .about-content button:hover{
+    color: var(--main-background-purple);
+}
+
+main .section-about article .about-content button.-show{
+    display: flex;
 }
 
 main .section-about article p{

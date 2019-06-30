@@ -13,6 +13,8 @@ window.addEventListener("load", ()=>{
     let $menuList = document.getElementById("menuList");
     let $menuItems = document.querySelectorAll("#navMenu > ul > li > a");
     let $figurePerfilAbout = document.querySelector("#about > article > figure");
+    let $aboutContent = document.getElementById("aboutContent");
+    let $buttonSeeMore = document.getElementById("buttonSeeMore");
 
     /**
      * Functions
@@ -50,6 +52,25 @@ window.addEventListener("load", ()=>{
         $figurePerfilAbout.insertAdjacentElement("afterbegin", $perfilIMG);
     }
 
+    function hiddenContent(){
+        $aboutContent.classList.add("-hidden-content");
+        $buttonSeeMore.classList.add("-show");
+    }
+
+    function showContent(){
+        $aboutContent.classList.remove("-hidden-content");
+        $buttonSeeMore.classList.remove("-show");
+    }
+
+    /**
+     * Conditions
+     */
+
+    // Verify if about content is biggest when 500px
+    if($aboutContent.scrollHeight > 500){
+        hiddenContent();
+    }
+
     /**
      * Events
      */
@@ -72,4 +93,6 @@ window.addEventListener("load", ()=>{
             hiddenFixedMenu();
         }
     });
+
+    $buttonSeeMore.addEventListener("click", showContent);
 });
