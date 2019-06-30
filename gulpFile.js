@@ -6,8 +6,10 @@ let rename = require("gulp-rename");
 
 let minHTML = require("gulp-htmlmin");
 let cleanCSS = require("gulp-clean-css");
-let concat = require("gulp-concat");
+// let concat = require("gulp-concat");
 let minJS = require("gulp-minify");
+// let throwError = require("gulp-reporter");
+// let eslint = require("eslint");
 let minIMG = require("gulp-tinypng");
 
 // Dev Path

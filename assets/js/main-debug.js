@@ -1,16 +1,18 @@
 window.addEventListener("load", ()=>{
     // Variables
-
     let $header = document.getElementById("mainHeader");
     let heightHeader = $header.scrollHeight;
 
+    let $perfilIMG = document.getElementById("perfilImg");
     let $headerFixed = document.getElementById("menuFixed");
     let $navMenuFixed = document.getElementById("navMenuFixed");
+    let $figureNavMenuFixed = document.querySelector("#navMenuFixed > figure");
     let $buttonMenu = document.getElementById("buttonMenu");
     let $buttonCloseMenu = document.getElementById("buttonCloseMenu");
     let $navMenu = document.getElementById("navMenu");
     let $menuList = document.getElementById("menuList");
     let $menuItems = document.querySelectorAll("#navMenu > ul > li > a");
+    let $figurePerfilAbout = document.querySelector("#about > article > figure");
 
     /**
      * Functions
@@ -30,7 +32,8 @@ window.addEventListener("load", ()=>{
 
     function showFixedMenu(){
         $headerFixed.classList.add("-show");
-        
+        $figureNavMenuFixed.insertAdjacentElement("afterbegin", $perfilIMG);
+
         if(window.matchMedia("(min-width: 768px)").matches){
             $navMenuFixed.insertAdjacentElement("beforeend", $menuList);
 
@@ -44,6 +47,7 @@ window.addEventListener("load", ()=>{
         $headerFixed.classList.remove("-show");
         $navMenu.insertAdjacentElement("beforeend", $menuList);          
         $header.insertAdjacentElement("beforeend", $buttonMenu);
+        $figurePerfilAbout.insertAdjacentElement("afterbegin", $perfilIMG);
     }
 
     /**

@@ -6,6 +6,7 @@
   "author": "jrmarqueshd <gilmar_junior@hotmail.com.br>",
   "license": "MIT",
   "devDependencies": {
+    "eslint": "5.16.0",
     "gulp": "4.0.0",
     "gulp-clean-css": "4.2.0",
     "gulp-concat": "2.6.1",
@@ -13,8 +14,10 @@
     "gulp-livereload": "4.0.1",
     "gulp-minify": "3.1.0",
     "gulp-rename": "1.4.0",
+    "gulp-reporter": "2.10.0",
     "gulp-tinypng": "1.0.2",
-    "gulp-watch": "5.0.1"
+    "gulp-watch": "5.0.1",
+    "http-server": "0.10.0"
   },
   "dependencies": {
     "get-google-fonts": "^1.2.0"
