@@ -39,6 +39,7 @@ window.addEventListener("load", ()=>{
         $buttonMenu.classList.remove("-hidden");
     }
 
+    // Function to show fixed menu when scroll > header height
     function showFixedMenu(){
         $headerFixed.classList.add("-show");
         $figureNavMenuFixed.insertAdjacentElement("afterbegin", $perfilIMG);
@@ -52,6 +53,7 @@ window.addEventListener("load", ()=>{
         }  
     }
 
+    // Function to hidden fixed menu when scroll < header height
     function hiddenFixedMenu(){
         $headerFixed.classList.remove("-show");
         $navMenu.insertAdjacentElement("beforeend", $menuList);          
@@ -59,11 +61,13 @@ window.addEventListener("load", ()=>{
         $figurePerfilAbout.insertAdjacentElement("afterbegin", $perfilIMG);
     }
 
+    // Function to hidden content when height #contentAbout > 500px
     function hiddenContent(){
         $aboutContent.classList.add("-hidden-content");
         $buttonSeeMore.classList.add("-show");
     }
 
+    // Function to show content after #buttonSeeMore clicked
     function showContent(){
         $aboutContent.classList.remove("-hidden-content");
         $buttonSeeMore.classList.remove("-show");
