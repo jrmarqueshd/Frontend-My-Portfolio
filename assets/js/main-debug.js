@@ -1,20 +1,27 @@
 window.addEventListener("load", ()=>{
-    // Variables
-    let $header = document.getElementById("mainHeader");
-    let heightHeader = $header.scrollHeight;
+    /**
+     * Variables
+     */
 
-    let $perfilIMG = document.getElementById("perfilImg");
-    let $headerFixed = document.getElementById("menuFixed");
-    let $navMenuFixed = document.getElementById("navMenuFixed");
-    let $figureNavMenuFixed = document.querySelector("#navMenuFixed > figure");
-    let $buttonMenu = document.getElementById("buttonMenu");
-    let $buttonCloseMenu = document.getElementById("buttonCloseMenu");
-    let $navMenu = document.getElementById("navMenu");
-    let $menuList = document.getElementById("menuList");
-    let $menuItems = document.querySelectorAll("#navMenu > ul > li > a");
-    let $figurePerfilAbout = document.querySelector("#about > article > figure");
-    let $aboutContent = document.getElementById("aboutContent");
-    let $buttonSeeMore = document.getElementById("buttonSeeMore");
+    // Header
+    let $header             = document.getElementById("mainHeader"),
+        $buttonMenu         = document.getElementById("buttonMenu"),
+        $buttonCloseMenu    = document.getElementById("buttonCloseMenu"),
+        $navMenu            = document.getElementById("navMenu"),
+        $menuList           = document.getElementById("menuList"),
+        $menuItems          = document.querySelectorAll("#navMenu > ul > li > a"),
+        heightHeader        = $header.scrollHeight;
+
+    // Fixed Menu
+    let $headerFixed        = document.getElementById("menuFixed"),
+        $navMenuFixed       = document.getElementById("navMenuFixed"),
+        $figureNavMenuFixed = document.querySelector("#navMenuFixed > figure");
+
+    // About
+    let $figurePerfilAbout  = document.querySelector("#about > article > figure"),
+        $perfilIMG          = document.getElementById("perfilImg"),
+        $aboutContent       = document.getElementById("aboutContent"),
+        $buttonSeeMore      = document.getElementById("buttonSeeMore");
 
     /**
      * Functions
