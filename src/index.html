@@ -12,9 +12,6 @@
 
     <!--Production JS-->
     <script src="./assets/js/main.min.js"></script>
-
-    <!--FontAwesome-->
-    <script src="https://kit.fontawesome.com/3967e9e61c.js"></script>
 </head>
 <body>
     <header id="mainHeader">
@@ -158,66 +155,61 @@
 
         <section id="skills" class="section-skills">
             <h2>SKILLS</h2>
+
             <figure>
-                <article>
-                    <i class="fab fa-html5"></i>
-                    <progress value="85" max="100"></progress>
-                </article>
-                <figcaption>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, magni, alias nisi dolore autem ad ipsam unde provident laboriosam corporis odio harum quisquam, earum delectus. Harum veritatis voluptatem ab neque.
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt ab ad enim itaque ipsum quos quod, optio error debitis laborum voluptatibus dignissimos tempora quae accusamus accusantium laudantium? Hic, sunt quibusdam.
-                </figcaption>
+                <img src="./assets/img/html5_ofrontender_skills.png" alt="HTML5" />
+                <progress value="85" max="100"></progress>
             </figure>
 
             <figure>
-                <article>
-                    <i class="fab fa-css3-alt"></i>
-                    <progress value="50" max="100"></progress>
-                </article>
-                <figcaption>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, magni, alias nisi dolore autem ad ipsam unde provident laboriosam corporis odio harum quisquam, earum delectus. Harum veritatis voluptatem ab neque.
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas rem blanditiis nulla, tempore voluptate fuga sint, voluptatibus aut, officia commodi accusamus cupiditate similique numquam doloremque nemo odit facere adipisci doloribus!
-                </figcaption>
+                <img src="./assets/img/css3_ofrontender_skills.png" alt="CSS3" />
+                <progress value="50" max="100"></progress>               
             </figure>
 
             <figure>
-                <article>
-                    <i class="fab fa-js-square"></i>
-                    <progress value="50" max="100"></progress>
-                </article>
-                <figcaption>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, magni, alias nisi dolore autem ad ipsam unde provident laboriosam corporis odio harum quisquam, earum delectus. Harum veritatis voluptatem ab neque.
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque aut non voluptatem a corrupti optio enim quia exercitationem nihil numquam laudantium modi labore, iste assumenda officiis debitis ipsa, minima facilis.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, aliquam eum? Ea, distinctio tempora recusandae cum officiis laboriosam minima eligendi dolores omnis ratione, quidem sequi rerum eveniet sunt nobis quos.
-                </figcaption>
+                <img src="./assets/img/js_ofrontender_skills.png" alt="JS" />
+                <progress value="50" max="100"></progress>
             </figure>
 
             <figure>
-                <article>
-                    <i class="fab fa-git-square"></i>
-                    <progress value="50" max="100"></progress>
-                </article>
-                <figcaption>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, magni, alias nisi dolore autem ad ipsam unde provident laboriosam corporis odio harum quisquam, earum delectus. Harum veritatis voluptatem ab neque.</figcaption>
+                <img src="./assets/img/git_ofrontender_skills.png" alt="Git" />
+                <progress value="50" max="100"></progress>
+            </figure>
+
+            <figure>
+                <img src="./assets/img/node_ofrontender_skills.png" alt="Node" />
+                <progress value="50" max="100"></progress>
+            </figure>
+
+            <figure>
+                <img src="./assets/img/gulp_ofrontender_skills.png" alt="Gulp" />
+                <progress value="50" max="100"></progress>
+            </figure>
+
+            <figure>
+                <img src="./assets/img/pwa_ofrontender_skills.png" alt="PWA" />
+                <progress value="50" max="100"></progress>
             </figure>
         </section>
 
         <section id="contact" class="section-contact">
-            <h2>Lorem Ipsum dolor sit amet?</h2>
+            <h2>Tem uma proposta para mim?</h2>
             <figure>
                 <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam veniam necessitatibus voluptate aliquid non quisquam aut eius, hic, unde ipsam quae illo sint animi nobis tempora enim iste voluptates similique.
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure, nam? Placeat libero impedit voluptas ipsam quisquam cum iusto harum possimus, optio culpa quis autem odit quas ea fugiat ex illum.
+                    Estou esperando sua mensagem, você pode me enviar um e-mail, me ligar, enviar uma mensagem por WhatsApp ou por aqui mesmo pelo site. Basta usar o formulário de contato. 
                 </p>
             </figure>
-            <form action="">
+            <form>
                 <input type="text" placeholder="Nome" />
                 <input type="email" placeholder="E-mail" />
                 <input type="tel" placeholder="Telefone" />
                 <textarea rows="0" placeholder="Mensagem"></textarea>
 
-                <button>Enviar</button>
+                <button id="sendButton">Enviar</button>
             </form>
         </section>
     </main>
+
+    <script src="send-email.min-min.js"></script>
 </body>
 </html>

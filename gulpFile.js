@@ -3,6 +3,7 @@ let gulp = require("gulp");
 let watch = require("gulp-watch");
 let livereload = require("gulp-livereload");
 let rename = require("gulp-rename");
+let browserify = require("gulp-browserify");
 
 let minHTML = require("gulp-htmlmin");
 let cleanCSS = require("gulp-clean-css");
@@ -61,6 +62,19 @@ gulp.task("minifyJS", ()=>{
         .pipe(livereload(console.log("Watching JS")));
 });
 
+gulp.task("browserify", ()=>{
+    livereload.listen();
+
+    return watch(devRootPath + jsPath + "sendEmail.js")
+        .pipe(browserify({
+            insertGlobals: true
+        }))
+        .pipe(rename("send-email.min.js"))
+        .pipe(minJS())
+        .pipe(gulp.dest("./"))
+        .pipe(livereload(console.log("Watching Browserify")));
+});
+
 gulp.task("tinyPNG", ()=>{
     return gulp.src(devRootPath + imagesPath + "*")
         .pipe(minIMG("GIiBwwZEtaA4lb1V4O2zZqVf22jvlxGy"))
@@ -68,5 +82,6 @@ gulp.task("tinyPNG", ()=>{
         .pipe(livereload(console.log("Minify IMGs")));
 });
 
-gulp.task("default", gulp.parallel("minifyHTML", "minifyCSS", "minifyJS"));
+gulp.task("default", gulp.parallel("minifyHTML", "minifyCSS", "minifyJS", "browserify"));
 gulp.task("tiny", gulp.parallel("tinyPNG"));
+gulp.task("browserify", gulp.parallel("browserify"));
