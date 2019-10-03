@@ -1,87 +1,28 @@
-let gulp = require("gulp");
+const gulp = require("gulp");
+const minify = require('gulp-minifier');
+const watch = require("gulp-watch");
+const livereload = require("gulp-livereload");
 
-let watch = require("gulp-watch");
-let livereload = require("gulp-livereload");
-let rename = require("gulp-rename");
-let browserify = require("gulp-browserify");
 
-let minHTML = require("gulp-htmlmin");
-let cleanCSS = require("gulp-clean-css");
-// let concat = require("gulp-concat");
-let minJS = require("gulp-minify");
-// let throwError = require("gulp-reporter");
-// let eslint = require("eslint");
-let minIMG = require("gulp-tinypng");
-
-// Dev Path
-const devRootPath = "./src/";
-
-// Prod Path
-const prodRootPath = "./";
-const ProdPath = "./assets/";
-
-// Global Paths
-const cssPath = "css/";
-const jsPath = "js/";
-const imagesPath = "img/";
-
-gulp.task("minifyHTML", ()=>{
+gulp.task('minify', function () {
     livereload.listen();
-    return watch(devRootPath + "*.html")
-        .pipe(minHTML({ 
-            collapseWhitespace: true,
-            html5: true,
-            minifyJS: true,
-            minifyURLs: true,
+    return watch('./src/**/*')
+        .pipe(minify({
+            minify: true,
+            minifyHTML: {
+                collapseWhitespace: true,
+                conservativeCollapse: true,
+            },
+            minifyJS: {
+                sourceMap: false
+            },
             minifyCSS: true,
-        }))
-        .pipe(gulp.dest(prodRootPath))
-        .pipe(livereload(console.log("Watching HTML")));
+            getKeptComment: function (content, filePath) {
+                var m = content.match(/\/\*![\s\S]*?\*\//img);
+                return m && m.join('\n') + '\n' || '';
+        }
+    })).pipe(gulp.dest("*.js" ? "./assets/" : "./assets/"))
+        .pipe(livereload(console.log("Watching files")));
 });
 
-gulp.task("minifyCSS", ()=>{
-    return watch(devRootPath + cssPath + "*.css")
-        .pipe(cleanCSS({
-            compatibility: "ie8"
-        }))
-        .pipe(rename("style.min.css"))
-        .pipe(gulp.dest(ProdPath + cssPath))
-        .pipe(livereload(console.log("Watching CSS")));
-});
-
-gulp.task("minifyJS", ()=>{
-    livereload.listen();
-    return watch(devRootPath + jsPath + "*.js")
-        .pipe(minJS({
-            ext: {
-                src: "-debug.js",
-                min: ".min.js"
-            }
-        }))
-        .pipe(gulp.dest(ProdPath + jsPath))
-        .pipe(livereload(console.log("Watching JS")));
-});
-
-gulp.task("browserify", ()=>{
-    livereload.listen();
-
-    return watch(devRootPath + jsPath + "sendEmail.js")
-        .pipe(browserify({
-            insertGlobals: true
-        }))
-        .pipe(rename("send-email.min.js"))
-        .pipe(minJS())
-        .pipe(gulp.dest("./"))
-        .pipe(livereload(console.log("Watching Browserify")));
-});
-
-gulp.task("tinyPNG", ()=>{
-    return gulp.src(devRootPath + imagesPath + "*")
-        .pipe(minIMG("GIiBwwZEtaA4lb1V4O2zZqVf22jvlxGy"))
-        .pipe(gulp.dest(ProdPath + imagesPath))
-        .pipe(livereload(console.log("Minify IMGs")));
-});
-
-gulp.task("default", gulp.parallel("minifyHTML", "minifyCSS", "minifyJS", "browserify"));
-gulp.task("tiny", gulp.parallel("tinyPNG"));
-gulp.task("browserify", gulp.parallel("browserify"));
+gulp.task("default", gulp.parallel("minify"));
