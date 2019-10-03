@@ -10,6 +10,8 @@ window.addEventListener("load", ()=>{
         $navMenu            = document.getElementById("navMenu"),
         $menuList           = document.getElementById("menuList"),
         $menuItems          = document.querySelectorAll("#navMenu > ul > li > a"),
+        $heroVideo          = document.getElementById("heroVideo"),
+        $heroContainer      = document.getElementById("heroContainer"),
         heightHeader        = $header.scrollHeight;
 
     // Fixed Menu
@@ -51,6 +53,19 @@ window.addEventListener("load", ()=>{
             $navMenu.insertAdjacentElement("beforeend", $menuList); 
             $navMenuFixed.insertAdjacentElement("beforeend", $buttonMenu);
         }  
+    }
+
+    // Function to show hero video after load page and load video 
+    function showHeroVideo(){
+        $heroVideo.setAttribute("src", $heroVideo.getAttribute("data-src"));
+        $heroVideo.style.opacity = "0";
+    
+        $heroVideo.addEventListener("load", ()=>{
+            setTimeout(()=>{
+                $heroContainer.classList.remove("pre-loading");
+                $heroVideo.style.opacity = "1";
+            }, 4000);
+        });
     }
 
     // Function to hidden fixed menu when scroll < header height
@@ -100,10 +115,15 @@ window.addEventListener("load", ()=>{
     window.addEventListener("scroll", ()=>{
         if(window.scrollY > heightHeader){
             showFixedMenu();          
+            // $heroContainer.style.opacity = "";
         }else if(window.scrollY < heightHeader){
             hiddenFixedMenu();
         }
     });
 
     $buttonSeeMore.addEventListener("click", showContent);
+
+    if(window.matchMedia("(min-width: 1141px)").matches){
+        showHeroVideo();
+    }
 });

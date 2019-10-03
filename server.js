@@ -3,8 +3,8 @@ const app = express();
 const server = require("http").createServer(app);
 const path = require("path");
 
-app.use(express.static(path.join(__dirname)));
-app.set("views", path.join(__dirname));
+app.use(express.static(path.join(__dirname, "assets")));
+app.set("views", path.join(__dirname, "assets"));
 app.engine("html", require("ejs").renderFile);
 app.set("views engine", "html");
 

@@ -2,6 +2,7 @@ const gulp = require("gulp");
 const minify = require('gulp-minifier');
 const watch = require("gulp-watch");
 const livereload = require("gulp-livereload");
+const htmlMin = require("gulp")
 
 
 gulp.task('minify', function () {
@@ -21,7 +22,7 @@ gulp.task('minify', function () {
                 var m = content.match(/\/\*![\s\S]*?\*\//img);
                 return m && m.join('\n') + '\n' || '';
         }
-    })).pipe(gulp.dest("*.js" ? "./assets/" : "./assets/"))
+    })).pipe(gulp.dest("*.js" || "*.css" ? "./assets/" : "./"))
         .pipe(livereload(console.log("Watching files")));
 });
 
