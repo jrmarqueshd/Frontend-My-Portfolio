@@ -1,0 +1,11 @@
+Seja bem-vindo ao meu portfólio e antes de falar sobre as minhas <a href="#skills">skills</a> com desenvolvimento WEB gostaria de me apresentar melhor.<br /><br />
+
+Moro atualmente em São Paulo (no ABC), sou formado em Análise e Desenvolvimento de Sistemas pela Anhanguera (Unidade Anchieta), sou casado e tenho <span id="birth">26</span> anos, sou apaixonado por tecnologia desde os meus 10 anos e foi freqüentando uma lan-house que me despertou a vontade de aprender mais sobre esse universo maravilhoso.<br /><br />
+
+Lembro que naquela época o meu maior desejo era ter um computador para poder testar idéias que vinham a minha cabeça, e foi com 16 anos de idade que consegui realizar o meu sonho de comprar o meu primeiro computador.<br /><br />
+
+Desde então as minhas expectativas com tecnologia só foram aumentando, e decidi que era chegada a hora de aumentar um pouco o nível!
+
+<h3>Trajetória de estudos</h3>
+
+Até o momento foram <span id="amountCourses">8</span> cursos concluídos sem contar as consultas diárias em fóruns, grupos de estudo e afins... Posso dizer que a trajetória só está começando.<br />

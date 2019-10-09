@@ -1,0 +1,122 @@
+!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Hello World</title>
+		<style>
+			* {
+				box-sizing: border-box !important;
+				outline: none;
+			}
+
+			input:focus,
+			input:active,
+			textarea:focus,
+			textarea:active,
+			button:focus,
+			button:active {
+				box-shadow: 1px 1px 5px 0px rgb(77, 144, 254),
+					1px 1px 5px 0px rgb(77, 144, 254);
+			}
+
+			body {
+				background-color: #7d52ac;
+				min-height: 100vh;
+			}
+
+			body,
+			body > div {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			body > div {
+				flex-wrap: wrap;
+				background-color: #fff;
+				border-radius: 15px;
+				padding: 40px;
+				align-items: flex-start;
+			}
+
+			div input,
+			div textarea {
+				width: 100%;
+			}
+
+			div input,
+			div textarea {
+				border: 1px solid #333;
+				border-radius: 30px;
+			}
+
+			div input,
+			div textarea,
+			div button {
+				padding: 15px 10px;
+				margin: 15px 0;
+			}
+
+			div button {
+				background-color: #7d52ac;
+				color: #fff;
+				padding: 10px;
+				border-radius: 30px;
+				max-width: 200px;
+				width: 100%;
+				transition: all 98.7ms ease-out;
+				font-weight: bold;
+				font-size: 1.2em;
+				text-transform: uppercase;
+			}
+
+			div button:hover {
+				background-color: #fff;
+				color: #7d52ac;
+				border-color: #7d52ac;
+			}
+
+			textarea {
+				resize: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<input id="name" type="text" placeholder="name" />
+			<input id="institution" type="text" placeholder="institution" />
+			<textarea id="description" placeholder="description"></textarea>
+			<input id="extras" type="text" placeholder="extras" />
+
+			<button id="send" type="submit">Send</button>
+		</div>
+
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script>
+			const btn = document.getElementById("send");
+			const name = document.getElementById("name");
+			const institution = document.getElementById("institution");
+			const description = document.getElementById("description");
+			const extras = document.getElementById("extras");
+
+			async function handleSubmit() {
+				if (name.value.length && description.value.length) {
+					await axios.post("http://localhost:3333/course", {
+						name: name.value,
+						institution: institution.value,
+						description: description.value,
+						extras: extras.value
+					});
+
+					alert("post feito!!");
+				}
+			}
+
+			btn.addEventListener("click", () => {
+				handleSubmit();
+			});
+		</script>
+	</body>
+</html>

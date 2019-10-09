@@ -1,0 +1,64 @@
+<dt>Análise e Desenvolvimento de Sistemas</dt>
+<dd>
+Minha tão sonhada faculdade, esse foi o momento que esperei por
+anos até que finalmente no ano de 2014 , foram
+tantos cursos que tive nesse período que é será possível listar
+somente alguns abaixo:
+<ul>
+<li>Orientação a objeto,</li>
+<li>Lógica de programação;</li>
+<li>Banco de dados;</li>
+<li>Estrutura de dados;</li>
+<li>Fluxogramas e algoritmos;</li>
+<li>Regras de negócio e administração;</li>
+<li>e muitos outros...</li>
+</ul>
+Me formei no ano de 2016 e ao me formar eu já tinha certeza do
+que eu queria para o meu futuro, eu queria ser um desenvolvedor!
+</dd>
+
+<dt>FrontEnd Developer</dt>
+<dd>
+Esse foi o curso que me fez entrar para o mundo do
+desenvolvimento WEB profissionalmente, nele eu aprendi como era
+o dia-a-dia de um desenvolvedor. Nele eu aprendi:
+<ul> Git, Node.js, NPM, Gulp, JavaScript (ECMAScript 6), Bash. 
+</ul>
+</dd>
+
+<dt>Desenvolvimento WEB e WEB Moderno</dt>
+<dd>Ao me formar na faculdade eu já tinha a certeza que eu queria ser desenvolvedor, e foi nesse momento que eu comecei a buscar mais conhecimento sobre a área. Nesse curso eu aprendi sobre: 
+<ul>
+<li>HTML 5;</li>
+<li>CSS 3;</li>
+<li>JavaScript (ECMAScript);</li>
+<li>Conceitos sobre WEB.</li>
+</ul>
+</dd>
+
+<dt>Introdução à PWA e Service Worker</dt>
+<dd>
+Esse foi um curso totalmente gratuito disponibilizado pelo <strong>Google</strong>, onde a missão era introduzir ao desenvolvimento WEB e mobile. Nele aprendi sobre automatização de tarefas e o cache first para a melhor experiência do usuário.
+</dd>
+
+
+<dt>Fluxograma em Excel</dt>
+<dd>
+Esse curso foi onde eu aprendi sobre regras de negócio, fluxogramas e um pouquinho de lógica de programação com se e senão (o famoso IF-Else), fiz ele em 2014 e me formei nesse mesmo ano.
+</dd>
+
+
+<dt>Hardwares e softwares</dt>
+<dd>
+Esse foi um curso que ganhei gratuitamente pela prefeitura da
+minha cidade, fiz ele assim que saí do curso de fluxograma em
+excel, foi um curso de 6 meses onde eu pude aprender sobre a
+diferença entre a parte fisica e a parte lógica dos
+computadores. e foi nele que conheci um rapaz que me apresentou
+o Java.
+</dd>
+
+<dt>Informática</dt>
+<dd>
+Iniciei pela informática no ano de 2010 e me formei no finalzinho de 2011, e foi o pontapé inicial para que eu fizesse o próximo curso!
+</dd>
